@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\aboutController;
 use App\Http\Controllers\dasboardController;
+use App\Http\Controllers\dashboardController;
+use App\Http\Controllers\homeController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\registerController;
 use Illuminate\Support\Facades\Route;
@@ -26,12 +28,10 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('register');
 });
-Route::middleware('auth:users')->group(function () {
-    // Rute yang memerlukan otentikasi
-});
-Route::get('/dashboard', [dasboardController::class, 'index'])->name('dashboards');
-Route::post('/register', [registerController::class, 'register']);
-Route::post('/login', [loginController::class, 'login']);
+
+Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');
+Route::post('/register', [homeController::class, 'register']);
+Route::post('/login', [homeController::class, 'login']);
 
 Route::get('/home', function () {
     $cek = 'cek';
