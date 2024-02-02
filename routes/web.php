@@ -29,7 +29,7 @@ Route::get('/register', function () {
 Route::middleware('auth:users')->group(function () {
     // Rute yang memerlukan otentikasi
 });
-Route::get('/dashboard', [dasboardController::class, 'index'])->name('dashboard');
+Route::get('/dashboard', [dasboardController::class, 'index'])->name('dashboards');
 Route::post('/register', [registerController::class, 'register']);
 Route::post('/login', [loginController::class, 'login']);
 

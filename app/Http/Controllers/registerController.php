@@ -21,18 +21,18 @@ class registerController extends Controller
             `created_at`
         );
         $user = userModel::create([
-            'name' => $data['username'],
-            'password' => bcrypt($data['password']),
-            'email' => $data['email'],
+            'name' => $request->input('username'),
+            'password' => bcrypt($request->input('password')),
+            'email' => $request->input('email'),
             'role' => 'user'
         ]);
 
         if ($user) {
             // Registrasi berhasil
-            return view('/dasboard');
+            return redirect('/dasboard');
         } else {
             // Registrasi gagal
-            return view('/register');
+            return redirect('/register');
         }
     }
 }
