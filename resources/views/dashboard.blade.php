@@ -7,10 +7,12 @@
     <title>Admin | Dasboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
     <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/modal.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
     
+    <script src="js/modal.js"></script>
     <script src="js/dashboard.js"></script>
     <section id="sidebar">
         <div class="brand">
@@ -54,13 +56,13 @@
             <a href="">Username</a>
         </div>    
     </nav>
+    
     <main>
-        <a><i class='bx bxs-home icon'></i></a>
-        <ul>
-            @foreach ($data_user as $user)
-                <li>{{ $user->name }} - {{ $user->email }}</li>
-            @endforeach
-        </ul>
+        <div class="title">
+            <a>Dasboard</a>
+            <a><button class="tambah"><i class='bx bx-plus-medical'></i> Tambah</button></a>
+        </div>
+        
         <table>
             <thead>
                 <tr>
@@ -68,6 +70,7 @@
                     <th>USERNAME</th>
                     <th>EMAIL</th>
                     <th>ROLE</th>
+                    <th>AKSI</th>
                 </tr>
             </thead>
             <tbody>
@@ -77,14 +80,42 @@
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
                         <td>{{ $user->role }}</td>
-                    </tr>
+                        <td>
+                    <button class="edit" onclick="editUser({{ $user->id }})"><i class='bx bxs-pencil'></i> Edit</button>
+                    <!-- Tombol Hapus -->
+                    <button class="hapus" onclick="deleteUser({{ $user->id }})"><i class='bx bxs-trash'></i> Hapus</button>
+                </td>
+                </tr>
                 @endforeach
                 <!-- Tambahkan baris lain sesuai dengan data yang dimiliki -->
             </tbody>
+            
         </table>
     </main>
 </section>
-    
+<div class="modal" id="tambahuser">
+    <div class="judul_modal">
+        <h1 >Tambah User</h1>
+    </div>
+    <div class="isi_modal">
+        <div class="isi_modal1">
+        <label for="">Username </label>
+        <input type="text" placeholder="Masukkan Username">
+        </div>
+        <div class="isi_modal1">
+        <label for="">Password </label>
+        <input type="text" placeholder="Masukkan Password">
+        </div>
+        <div class="isi_modal1">
+            <label for="">Email </label>
+        <input type="text" placeholder="Masukkan Email">
+        </div>
+    </div>
+    <div class="button_modal">
+        <button class="close">CLOSE</button>
+        <button class="tambah">TAMBAH</button>
+    </div>
+</div>
     
 </body>
 </html>

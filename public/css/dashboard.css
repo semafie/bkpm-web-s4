@@ -33,7 +33,7 @@ li{
     overflow-y: auto;
     scrollbar-width: none;
     transition: all .3s ease;
-    z-index: 200;
+    /* z-index: ; */
 }
 #sidebar.hide {
     max-width: 60px;
@@ -153,3 +153,82 @@ main{
     padding: 10px 20px 10px 20px;
     
 }
+
+table {
+    border-collapse: collapse;
+      width: 100%;
+}
+th, td {
+    
+    text-align: center;
+    padding: 8px;
+    /* text-align: left; */
+}
+th {
+    
+    /* justify-content: center; */
+    background-color: #fa6666;
+}
+    th:first-child {
+    border-top-left-radius: 5px;
+}
+
+th:last-child {
+    border-top-right-radius: 5px;
+}
+tbody tr:nth-child(even) td {
+    background-color: rgb(235, 235, 235);
+}
+
+tbody tr:nth-child(odd) td {
+    background-color: rgb(245, 245, 245);
+}
+
+tbody tr td button{
+    margin: 0;
+    cursor: pointer;
+    border: none;
+    padding: 5px 15px 5px 15px;
+    border-radius: 3px;
+}
+
+
+tbody tr td .edit{
+    color: #202020;
+    background-color: #d5d815;
+}
+
+tbody tr td .edit:hover{
+    background-color: #fafd43;
+    
+}
+
+tbody tr td .hapus{
+    color: #ffffff;
+    background-color: #fa2b2b;
+}
+
+tbody tr td .hapus:hover{
+    
+    background-color: #ff6262;
+}
+.title{
+    display: flex;
+    justify-content: space-between;
+        align-items: center;
+    
+}
+.tambah {
+    
+    padding: 8px 18px 8px 18px;
+    background-color: #168f44;
+    color: #ffffff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.tambah:hover {
+    background-color: #2bcf6a;
+}
+
