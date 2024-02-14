@@ -93,27 +93,30 @@
         </table>
     </main>
 </section>
-<div class="modal" id="tambahuser">
-    <div class="judul_modal">
-        <h1 >Tambah User</h1>
-    </div>
-    <div class="isi_modal">
-        <div class="isi_modal1">
-        <label for="">Username </label>
-        <input type="text" placeholder="Masukkan Username">
+<div class="modalabsolute">
+    <div class="hide_modal" id="hidemodal"></div>
+    <div class="modal" id="tambahuser">
+        <div class="judul_modal">
+            <h1 >Tambah User</h1>
         </div>
-        <div class="isi_modal1">
-        <label for="">Password </label>
-        <input type="text" placeholder="Masukkan Password">
+        <div class="isi_modal">
+            <div class="isi_modal1">
+            <label for="">Username </label>
+            <input type="text" placeholder="Masukkan Username">
+            </div>
+            <div class="isi_modal1">
+            <label for="">Password </label>
+            <input type="text" placeholder="Masukkan Password">
+            </div>
+            <div class="isi_modal1">
+                <label for="">Email </label>
+            <input type="text" placeholder="Masukkan Email">
+            </div>
         </div>
-        <div class="isi_modal1">
-            <label for="">Email </label>
-        <input type="text" placeholder="Masukkan Email">
+        <div class="button_modal">
+            <button class="close">CLOSE</button>
+            <button class="tambah">TAMBAH</button>
         </div>
-    </div>
-    <div class="button_modal">
-        <button class="close">CLOSE</button>
-        <button class="tambah">TAMBAH</button>
     </div>
 </div>
     

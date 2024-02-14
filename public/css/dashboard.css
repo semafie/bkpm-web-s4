@@ -145,9 +145,22 @@ nav{
     height: 64px;
     padding: 0 20px;
     display: flex;
+    margin: 0;
     align-items: center;
     grid-gap: 28px;
 }
+
+.atas{
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+}
+
+.atas a {
+    
+    
+}
+
 main{
     
     padding: 10px 20px 10px 20px;

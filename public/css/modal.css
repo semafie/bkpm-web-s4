@@ -1,25 +1,50 @@
 .modal {
-    /* max-width: 80%; */
-    transition: all .3s ease;
+    /* width: 100%; */
+    /* transition: all .3s ease; */
     width: 400px;
     background-color: #ffffff;
     position: absolute;
+    opacity: 0;
     top: 8%;
+    /* left: 50%; */
     left: 50%;
-    transform: translate(-50%);
+    transition: all 0.3s ease;
+    
+    transform: translate(-50%, 0) scale(1.3);
     padding: 10px;
     border-radius: 3px;
-    z-index: 1000;
+    z-index: -1;
     box-shadow: 0 0 9px rgba(0, 0, 0, .1);
-    display: none;
-}
-
-.modal.show{
     display: block;
-    animation: showModal 1200ms;
+    
+}
+.modal.active{
+    /* display: block; */
+    z-index: 10;
+    opacity: 1;
+    
+    transform: translate(-50%, 0) scale(1);
+    
 }
 
-.modal-on-active::after{
+
+.hide_modal{
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-color: #000000;
+    opacity: 0;
+    top: 0;
+    z-index: -1;
+    display: block;
+    transition: 0.5s ease;
+}
+.hide_modal.active{
+    z-index: 10;
+    opacity: 0.7;
+}
+
+/* .modal-on-active::after{
     content: "";
     position: absolute;
     background-color: rgb(0, 0, 0);
@@ -29,14 +54,33 @@
     top: 0;
     right: 0;
     transition: all 1200ms ease;
-}
+} */
 @keyframes showModal {
     from{
-        opacity: 0;
+        transform: translate(-50%, 0) scale(0.1);
+        /* opacity: 0; */
     }
     to{
-        opacity: 1;
+        /* opacity: 1; */
+        transform: translate(-50%,) scale(1);
     }
+}
+
+@keyframes hideModal {
+    from{
+        transform: translate(-50%, 0) scale(1);
+        /* opacity: 0; */
+    }
+    to{
+        /* opacity: 1; */
+        transform: translate(-50%,) scale(0.1);
+    }
+}
+
+.modal.hide{
+    
+    animation: hideModal 0.35s;
+    display: none;    
 }
 
 .judul_modal h1{
